@@ -1,7 +1,7 @@
 Title: The easiest way to get data into Redshift
 Date: 2018-10-23 11:30
 Modified: 2018-10-23 11:30
-Category: Python, Redshift, AWS
+Category: Redshift
 Tags: python, s3, redshift, aws, data transfer
 Slug: get_data_into_redshift
 Authors: Sam Zuckerman

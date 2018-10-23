@@ -2,7 +2,7 @@ Title: Thoughts on "Stop Writing Classes" PyCon 2012 talk
 Date: 2018-10-17 17:30
 Modified: 2018-10-17 17:30
 Category: Python
-Tags: python, youtube, videos
+Tags: python, videos, pycon
 Slug: stop_writing_classes
 Authors: Sam Zuckerman
 Summary: There's a [famous talk by Jack Diederich](https://www.youtube.com/watch?v=o9pEzgHorH0) about clean and readable Python code from PyCon 2012. The main point of his talk (and the title) is called "Stop Writing Classes". 
