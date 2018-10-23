@@ -22,7 +22,7 @@ group by
 
 since it only needs to look at those two columns, versus a system like Oracle that needs to read the entire row up to the necessary column, basically wasting time reading unnecessary data.
 
-# Problem - How do we get the data to Redshift?
+# Problem: Getting the data to Redshift
 However, this presents us with a bit of a problem. We like a lot of data being stored in Redshift, but how can we 'get' it there? If I'm performing a transform and load from another table, the answer is trivial, but let's say I have a lot of data sitting on my computer I want in Redshift.
 
 For example, I could have:
@@ -33,7 +33,7 @@ If the data is in the "few Gbs" of size, it won't take very long to upload, but 
 
 That's assuming you even have proper database credentials and connections. If you can't even connect directly, this is pretty much impossible.  
 
-# Solution - S3 to the rescue!
+# Solution: S3 to the rescue!
 
 Since Redshift and S3 are both part of AWS, they have baked in functionality together.
 
