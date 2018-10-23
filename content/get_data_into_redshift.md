@@ -131,13 +131,13 @@ There's additional commands to add (full list [can be found here](https://docs.a
 I find that I use the following most often:
 
 - [CSV](https://docs.aws.amazon.com/redshift/latest/dg/copy-parameters-data-format.html#copy-csv)
-  - This takes care of the fact that the file is a CSV and has defaults for the format.
+    - This takes care of the fact that the file is a CSV and has defaults for the format.
 - [QUOTE [AS] 'quote_character'](https://docs.aws.amazon.com/redshift/latest/dg/copy-parameters-data-format.html#copy-csv)
-  - This can only be used with the `CSV` command and is useful if there's user input where there might be hanging apostrophes or something like that. If you change the quote character to something random it will ignore the single apostrophes. 
+    - This can only be used with the `CSV` command and is useful if there's user input where there might be hanging apostrophes or something like that. If you change the quote character to something random it will ignore the single apostrophes. 
 - [DELIMITER](https://docs.aws.amazon.com/redshift/latest/dg/copy-parameters-data-format.html#copy-delimiter)
-  - You can change `DELIMITER` to `\t` if you have a txt file. You don't need the `CSV` command in this case.
+    - You can change `DELIMITER` to `\t` if you have a txt file. You don't need the `CSV` command in this case.
 - [IGNOREHEADER](https://docs.aws.amazon.com/redshift/latest/dg/copy-parameters-data-conversion.html#copy-ignoreheader) 
-  - If your file has column headers you'll get an error when loading. Use `IGNOREHEADER 1` to skip the first line.
+    - If your file has column headers you'll get an error when loading. Use `IGNOREHEADER 1` to skip the first line.
 
 With some of these commands added, your `COPY` command might look more like this:
 
