@@ -1,4 +1,4 @@
-Title: Using Slice Objects in Python
+Title: Using slice objects in Python
 Date: 2017-10-03 15:30
 Modified: 2017-10-03 15:30
 Category: Python

@@ -1,4 +1,4 @@
-Title: Finding Local Python Packages
+Title: Finding local python packages
 Date: 2017-12-21 12:45
 Modified: 2017-12-21 12:45
 Category: Python
