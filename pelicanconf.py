@@ -56,5 +56,6 @@ PROJECTS = [{
 #RELATIVE_URLS = True
 
 ARTICLE_EXCLUDES = [
-    'inprogress'
+    'inprogress',
+    'python_scripts'
 ]

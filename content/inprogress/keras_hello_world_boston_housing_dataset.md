@@ -33,7 +33,7 @@ We're going to need the following:
 from keras.datasets import boston_housing
 from keras.models import Sequential
 from keras.layers import Dense
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
 import numpy as np
             
 (X_train, y_train), (X_test, y_test) = boston_housing.load_data()
@@ -43,8 +43,8 @@ Neural networks work best when the data is normalized. The network would get con
 
 ```python
 
-scalerX = MinMaxScaler(feature_range(0,1))
-scalerY = MinMaxScaler(feature_range(0,1))
+scalerX = MinMaxScaler(feature_range=(0,1))
+scalerY = MinMaxScaler(feature_range=(0,1))
    
 scaled_training_X = scalerX.fit_transform(X_train)
 scaled_testing_X = scalerX.fit_transform(X_test)
@@ -52,10 +52,6 @@ scaled_testing_X = scalerX.fit_transform(X_test)
 scaled_training_y = scalerY.fit_transform(y_train.reshape(-1, 1))
 scaled_testing_y = scalerY.fit_transform(y_test.reshape(-1, 1))
 ```
-
-
-
-
     
 We're going to create a sequential neural network, dense layers and 32 nodes for each layer.
 
@@ -149,40 +145,83 @@ And to evaluate:
 mse = model.evaluate(scaled_testing_X, scaled_testing_y)
 ```    
     
-Since used mse as a loss function above, when we use the `evaluate` method, we'll get mse returned.
+Since we used mse as a loss function above, when we use the `evaluate` method, we'll get mse returned.
 
 > Note: We are evaluating with the test data and will also be predicting with the test data as well. Usually when preparing a model for production one has a breakdown of training, testing and validation data sets for model evaluation. We are merely using the testing data to show how the model performs on unseen data.  
 
     
 Output:
 ```python
->>>0.16640686755086861 
-```
-
-# So What Does This Mean?
-
-Since we have the mse, we want to know how "off" our predictions are. The units are currently (scaled_dollars)^2 which isn't so useful. Therefore we have to 'untransform' it.
-
-```python
-result = np.sqrt(mse)
-true_result = scalerY.inverse_transform([result])
-```
-
-Output:
-```python
-array([[ 26.80030564]])
+>>> 0.017321763085383995
 ```
 
 __Note:__ you might get different slightly results based on rounding issues .
 
-This shows that across all the 
+# So What Does This Mean?
 
-def get_results(x):
-	pred = model.predict(scaled_testing_X[x:x+1])
-	return	y_test[x], scalerY.inverse_transform(pred)[0][0]
+Since we have the MSE, we want to know how "off" our predictions are. A quick explanation to MSE is that you take all your predictions, subtract the real values, square each result, and add those all together.
 
+## Why do we square the values?
 
+The following shows why we square the values:
 
+Let's say we have three data points: [1, 2, 3]
+Let's say we have three predicted points: [3, 2, 1]
+
+We would have the following total (without squaring):
+```sql
+1-4 = -3
+2-2 =  0
+5-1 =  4
+
+ 
+-3 + 0 + 4 = 1
+```
+
+This would, incorrectly, imply a near-perfect model.
+
+Now, with squaring:
+
+```sql
+(1-4)^2 = 9
+(2-2)^2 = 0
+(5-1)^2 = 16
+ 
+9 + 0 + 16 = 25
+```
+
+Basically, by squaring we take care of the positive/negative number issue.
+
+Sometimes it's useful to take the square-root of the Mean Square Error so we'll get the same units that we're predicting (in this case dollars). In the above example we would see that our predictions were 'off' by 5 over the testing data.
+
+In Python we could calculate this by:
+```python
+rmse = np.sqrt(mse)
+```
+
+It's not so necessary in this case to take the Root Mean Square Error, though, since we scaled the data (i.e. an RMSE of 2345 wouldn't relate to $2345) and a main reason for these loss models is to compare models to eachother; the number by itself isn't very useful.
+
+# Comparing Keras Regression model to Linear Model
+
+First we need to import the proper libraries:
+```python 
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+ ```
+ 
+ ```python
+boston_linear_model = LinearRegression()
+ 
+boston_linear_model.fit(scaled_training_X, scaled_training_y)
+ 
+y_pred = boston_linear_model.predict(scaled_testing_X)
+ 
+mean_squared_error(scaled_testing_y, y_pred)
+```
+
+```python
+>>> 0.018737306901733503
+```
 
 
     scalerX = MinMaxScaler(feature_range=(0,1))
