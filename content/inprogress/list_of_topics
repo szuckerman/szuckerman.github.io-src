@@ -13,3 +13,10 @@ Web Scraping
 
 Basic Python
     Decorators
+
+Sqlite3
+    Loading a CSV to SQLITE
+    Using Sqlite DB in pandas
+
+S3
+    Direct upload to S3
