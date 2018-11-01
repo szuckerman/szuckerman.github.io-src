@@ -57,6 +57,7 @@ PROJECTS = [{
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+GOOGLE_ANALYTICS = "UA-128575468-1"
 
 ARTICLE_EXCLUDES = [
     'inprogress',
