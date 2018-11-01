@@ -20,3 +20,9 @@ Sqlite3
 
 S3
     Direct upload to S3
+
+Crontab
+    Automating python scripts
+
+Redshift
+    Python UDF
