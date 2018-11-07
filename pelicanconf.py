@@ -63,3 +63,5 @@ ARTICLE_EXCLUDES = [
     'inprogress',
     'python_scripts'
 ]
+
+STATIC_PATHS = ['images']
