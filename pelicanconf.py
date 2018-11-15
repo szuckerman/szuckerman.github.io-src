@@ -38,10 +38,13 @@ THEME = "pelican-elegant-1.3"
 DISQUS_SITENAME = 'szuckerman-github-io-1'
 
 
-LANDING_PAGE_ABOUT = {'title': 'I am full stack developer focusing on data-driven applications', 'details': 'I work as '
-                      'a full stack developer analyst using various database and web technologies to make data analysis '
-                      'more efficient. I work with the whole pipeline, from data engineering and database design to '
-                      'front end UX.'}
+LANDING_PAGE_ABOUT = {'title': 'I am full stack developer focusing on data-driven applications',
+                      'details': '<p>My name is Sam Zuckerman. I may be reached at <a href="https://github.com/szuckerman" '
+                      'target="_blank">Github</a>, <a href="https://twitter.com/samzuckerman" target="_blank">Twitter'
+                      '</a>, or <a href="https://www.linkedin.com/in/sampzuckerman/" target="_blank">LinkedIn</a></p>'
+                      '<p>I work as a full stack developer analyst using various database and web technologies to '
+                      'make data analysis more efficient. I work with the entire pipeline, from data engineering and '
+                      'database design to front end UX.</p>'}
 
 PROJECTS = [{
     'name': 'Bookscouter Linear Optimizer',
