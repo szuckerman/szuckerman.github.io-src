@@ -2,7 +2,7 @@ Title: Finding duplicate rows to not break a primary key
 Date: 2018-11-20 15:30
 Modified: 2018-11-20 15:30
 Category: SQL
-Tags: sql, redshift, postgresql, code snippet
+Tags: sql, redshift, postgres, code snippet
 Slug: finding_duplicate_rows_in_sql
 Authors: Sam Zuckerman
 Summary: Primary keys are essential to relational databases. They ensure that rows in a database conform to a unique identifier. The following code snippet shows how to identify problematic rows.
