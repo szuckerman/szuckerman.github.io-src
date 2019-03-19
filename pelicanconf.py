@@ -50,11 +50,11 @@ PROJECTS = [{
     'name': 'Bookscouter Linear Optimizer',
     'url': 'https://github.com/szuckerman/Bookscouter_LP',
     'description':
-    'A program which scrapes bookscouter.com for given ISBN numbers and determines to which stores they should be sent'
+    'A program which scrapes bookscouter.com for given ISBN numbers and determines to which stores they should be sent '
     'to maximize profit.'},
     {'name': 'PyJanitor',
     'url': 'https://github.com/ericmjl/pyjanitor',
-    'description': '(Contributor) A Python implementation of the R package <a href="https://github.com/sfirke/janitor" target="_blank"'
+    'description': '(Core Contributor) A Python implementation of the R package <a href="https://github.com/sfirke/janitor" target="_blank"'
                    '>janitor</a>, and more. It includes tools for examining and cleaning dirty data.'}]
 
 
