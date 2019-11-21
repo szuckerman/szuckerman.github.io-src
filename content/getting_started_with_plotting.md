@@ -48,7 +48,7 @@ plt.show()
  
  Will result in a line chart plot, like so:
  
- ![School Line Chart]({filename}/images/getting_started_with_plotting_Figure_1.png)
+ ![School Line Chart]({static}/images/getting_started_with_plotting_Figure_1.png)
  
 ## Using within a Jupyter notebook
 
@@ -80,7 +80,7 @@ Don't forget to run `plt.show()` if necessary!
 
 We would get a figure like so:
 
-![School Line Chart Subplots]({filename}/images/getting_started_with_plotting_Figure_2.png)
+![School Line Chart Subplots]({static}/images/getting_started_with_plotting_Figure_2.png)
 
 Still, however, this data is better suited as bar charts, since the lines imply that the data is connected somehow, while it's really not. If the x-axis implied some order, such as time, then a line chart might be a good choice, but now counts of numbers is more useful for what we might be interested in. A bar chart is a good choice for this type of data.
 
@@ -88,7 +88,7 @@ Still, however, this data is better suited as bar charts, since the lines imply 
 my_plot = school_dat.plot.bar()
 ```
 
-![School Bar Chart]({filename}/images/getting_started_with_plotting_Figure_3.png)
+![School Bar Chart]({static}/images/getting_started_with_plotting_Figure_3.png)
 
 There are many options for different charts, they can be found in the _kind_ parameter in the [DataFrame.plot documentation](https://pandas.pydata.org/pandas-docs/version/0.23/generated/pandas.DataFrame.plot.html). I could have also called the above barchart as `school_dat.plot(kind='bar')`, but I feel using it as a method call above  looks cleaner. 
 
@@ -97,7 +97,7 @@ This is a good use case to break out the subplots, since I think it's more inter
 my_plot = school_dat.plot.bar(subplots=True)
 ```
 
-![School Bar Chart Subplots]({filename}/images/getting_started_with_plotting_Figure_4.png)
+![School Bar Chart Subplots]({static}/images/getting_started_with_plotting_Figure_4.png)
 
 Unfortunately the subplot titles get in the way, to remove them we can pass a list of empty strings. The list needs to be the same size as the number of columns in the DataFrame, since each column is getting its own subplot.
 
@@ -106,7 +106,7 @@ num_cols=school_dat.shape[1]
 my_plot = school_dat.plot.bar(subplots=True, title=['']*num_cols)
 ```
 
-![School Bar Chart Subplots No Titles]({filename}/images/getting_started_with_plotting_Figure_5.png)
+![School Bar Chart Subplots No Titles]({static}/images/getting_started_with_plotting_Figure_5.png)
 
 I think this is a good start to an insightful visualization for this type of data.
 

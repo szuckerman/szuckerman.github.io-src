@@ -5,7 +5,7 @@ Category: Python
 Tags: python, functools, functions, code snippet
 Slug: functools_singledispatch
 Authors: Sam Zuckerman
-Summary: There's a lot of cool stuff in the functools module. Some small additions to your functions will greatly increase your productivity and your code quality. `singledispatch` is an easy way to apply 
+Summary: There's a lot of cool stuff in the functools module. Some small additions to your functions will greatly increase your productivity and your code quality. `singledispatch` is an easy way to apply overload functions based on an input argument's type.
 
 # Why do I need singledispatch?
 
@@ -33,6 +33,7 @@ def print_currency(val):
 units = 10
 revenue = 100.0
 output = f'We sold {print_currency(units)} units for {print_currency(revenue)}.'
+print(output)
 
 >>> 'We sold 10 units for $100.0.'
 ```
@@ -62,6 +63,7 @@ def _(val):
 units = 10
 revenue = 100.0
 output = f'We sold {print_currency(units)} units for {print_currency(revenue)}.'
+print(output)
 
 >>> 'We sold 10 units for $100.0.'
 ```
@@ -80,12 +82,12 @@ def print_currency(arg):
     
 
 @print_currency.register
-def _(val:: float):
+def _(val:float):
     return '$' + str(val)
     
     
 @print_currency.register
-def _(val:: int):
+def _(val:int):
     return str(val)
 
 units = 10

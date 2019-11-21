@@ -52,7 +52,7 @@ plt.show()
 
 This graph is growing on the order of O(2<sup>n</sup>). That means that for every additional call, it's going to take about double the amount before it. When the function calls are taking less than a second to run, it's hardly noticeable, but there's a big difference between waiting a few minutes and a few hours.
 
-![Fibonacci Chart 1]({filename}/images/functools_lru_cache_Figure_1.png)
+![Fibonacci Chart 1]({static}/images/functools_lru_cache_Figure_1.png)
 
 # How can lru_cache fit in?
 
@@ -73,14 +73,14 @@ def fib(n):
 
 If we run the timeit section above, again, we get a graph that looks like this.
 
-![Fibonacci Chart 2]({filename}/images/functools_lru_cache_Figure_2.png)
+![Fibonacci Chart 2]({static}/images/functools_lru_cache_Figure_2.png)
 
 
 Besides the fact that it almost ran instantly, it's almost running in O(1) time, too.
 
 We can even bump up the number to look for the 1000th fibonacci and it also runs just as quick. That timed graph looks like this.
 
-![Fibonacci Chart 3]({filename}/images/functools_lru_cache_Figure_3.png)
+![Fibonacci Chart 3]({static}/images/functools_lru_cache_Figure_3.png)
 
 # Why did this go so much faster?
 
