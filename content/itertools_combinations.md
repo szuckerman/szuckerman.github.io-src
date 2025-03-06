@@ -4,7 +4,7 @@ modified: 2025-03-06 10:00
 category: Python
 tags: python, itertools, combinations, code snippet
 slug: itertools_combinations
-authors: Alex Harper
+authors: Sam Zuckerman
 summary: The `itertools` module is packed with powerful tools for working with iterators. Among them, `combinations` and `combinations_with_replacement` stand out as elegant solutions for generating subsets from a collection. Whether you’re solving math problems or building efficient algorithms, these functions can save you time and effort.
 
 # Why do I need combinations and combinations_with_replacement?
